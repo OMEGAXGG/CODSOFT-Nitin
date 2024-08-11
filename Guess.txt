@@ -12,7 +12,7 @@ protected:
 public:
     GuessNumber()
     {
-    	int z=100;
+    	int z=200;
         srand(time(0));
         numberToGuess = rand() % z+1;
     }
