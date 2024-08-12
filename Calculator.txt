@@ -1,0 +1,77 @@
+#include<iostream>
+using namespace std;
+
+class FirstValue
+{ 
+  public:
+   float input1, input2;
+    void maths()
+    {
+        cout<<"Enter the first number: ";
+        cin>>input1;
+        cout<<"Enter the second number: ";
+        cin>>input2;
+    }
+}; 
+
+class Symbol
+{
+    public:
+    char z;
+     void arithmeticoperator()
+     {
+        if ('+' , '-' , '*' , '/')
+        {
+            cout<<"Enter the Operation for Calculator: ";
+            cin>>z;
+        }
+        else
+        {
+            cout<<"Invalid Operator";
+        }
+     }
+};
+
+class operatorWork:public FirstValue,public Symbol
+{
+    public:
+     double CalcultorResult;
+     void calculator()
+     {
+        if (z =='+')
+        {
+            CalcultorResult = input1 + input2;
+        }
+        else if (z =='-')
+        {
+            CalcultorResult = input1 - input2;
+        }
+        else if (z =='*')
+        {
+            CalcultorResult = input1 * input2;
+        }
+        else if (z =='/')
+        {
+            CalcultorResult = input1 / input2;
+            if (input1==0 || input2 ==0)
+            {
+                cout<<"Error: Division by zero "<<endl;
+            }   
+        }
+        else
+        {
+            cout<<"Invalid Operator or Number error"<<endl;
+        }
+        		if(CalcultorResult !=0)
+        		{
+        			cout<<"Result of Calculation is "<<CalcultorResult<<endl;
+    			}
+     }
+};
+int main()
+{
+operatorWork nn;
+nn.maths();
+nn.arithmeticoperator();
+nn.calculator();
+}
