@@ -65,9 +65,10 @@ class operatorWork:public FirstValue,public Symbol
         		if(CalcultorResult !=0)
         		{
         			cout<<"Result of Calculation is "<<CalcultorResult<<endl;
-    			}
+    			  }
      }
 };
+
 int main()
 {
 operatorWork nn;
