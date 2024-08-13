@@ -25,11 +25,6 @@ class Symbol
             cout<<"Enter the Operation for Calculator: ";
             cin>>z;
         }
-        else
-        {
-            cout<<"Invalid Operator";
-        }
-     }
 };
 
 class operatorWork:public FirstValue,public Symbol
@@ -58,10 +53,10 @@ class operatorWork:public FirstValue,public Symbol
                 cout<<"Error: Division by zero "<<endl;
             }   
         }
-        else
-        {
-            cout<<"Invalid Operator or Number error"<<endl;
-        }
+          else
+          {
+              cout<<"Invalid Operator"<<endl;
+          }
         		if(CalcultorResult !=0)
         		{
         			cout<<"Result of Calculation is "<<CalcultorResult<<endl;
