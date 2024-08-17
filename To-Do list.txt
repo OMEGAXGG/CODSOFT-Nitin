@@ -1,0 +1,90 @@
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+
+class Tasks
+{
+	public:
+		
+		string detail;
+		bool completed = false ;
+		
+		Tasks(const string& det): detail(det), completed (false){}
+};
+
+main()
+{
+	vector<Tasks> tasks;
+	int options;
+	int Taskrecord;
+	
+	while(options != 4)
+	{
+		cout<<"\n1-Add or Input task "<<endl;
+		cout<<"\n2-View tasks "<<endl;
+		cout<<"\n3-Mark task as completed "<<endl;
+		cout<<"\n4-Remove task "<<endl;
+		cout<<"\nPlease select your option:- ";
+		cin>>options;
+		cin.ignore();
+		
+	 switch(options)
+	 {
+		case 1:
+		{
+			string det;
+			cout<<"Enter the Task- ";
+			getline(cin, det);
+			tasks.push_back(Tasks(det));
+			break;
+		}
+		case 2:
+		{
+			if(!tasks.empty())
+			{
+				int n;
+				for (size_t n=0; n< tasks.size(); n++)
+				{
+				cout<<n+1<<" || "<<tasks[n].detail<< (tasks[n].completed ? " || Done\n " : " || Not Done\n")<<endl;
+				}
+			}
+			else 
+			{
+				cout<<"No task found"<<endl;
+				
+			}
+			break;
+		}
+		case 3:
+		{
+			cout<<"Mark what tasks are completed by putting the number:- "<<endl;
+			cin>>Taskrecord;
+			if(Taskrecord <= tasks.size() && Taskrecord > 0)
+			{
+				tasks[Taskrecord - 1].completed =true;	
+			} 
+			else 
+			{
+				cout<<"Error or Invalid task number"<<endl;
+			}
+		}
+		case 4:
+		{
+			cout<<"Remove the task by putting the number:= "<<endl;
+			cin>>Taskrecord;
+			if(Taskrecord > 0 && Taskrecord <= tasks.size())
+			{
+				tasks.erase(tasks.begin() + Taskrecord - 1);
+			}
+			else
+			{
+				cout<<"Invalid task number ";
+			}
+		}
+		default:
+			cout<<"Choice not found in 5 of them try again";
+			break;
+	 }
+	}
+}
